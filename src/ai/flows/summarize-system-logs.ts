@@ -38,7 +38,7 @@ const prompt = ai.definePrompt({
   Summarize the following system logs, identify potential issues, and provide recommendations for optimizing system performance.
 
   System Logs:
-  {{logs}}
+  {{{logs}}}
   `,
 });
 
