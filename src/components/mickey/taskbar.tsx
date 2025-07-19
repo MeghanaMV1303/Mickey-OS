@@ -15,7 +15,7 @@ interface TaskbarProps {
 }
 
 export function Taskbar({ onAppSelect }: TaskbarProps) {
-  const [time, setTime] = useState('');
+  const [time, setTime] = useState<string | null>(null);
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   useEffect(() => {

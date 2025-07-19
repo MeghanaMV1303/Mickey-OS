@@ -19,7 +19,7 @@ export function ClockWidget() {
         minute: '2-digit',
         second: '2-digit',
       })
-    : '00:00:00';
+    : null;
 
   const day = date
     ? date.toLocaleDateString([], {
@@ -34,7 +34,7 @@ export function ClockWidget() {
     <WidgetCard title="Clock" icon={Clock}>
       <div className="text-center py-4">
         <p className="text-5xl font-bold text-primary-foreground tracking-wider h-[48px]">
-          {date ? time : '...'}
+          {time || '...'}
         </p>
         <p className="text-sm text-muted-foreground mt-2">{day}</p>
       </div>
