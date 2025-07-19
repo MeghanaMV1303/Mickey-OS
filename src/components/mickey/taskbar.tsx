@@ -40,15 +40,15 @@ export function Taskbar({ onAppSelect }: TaskbarProps) {
           </Button>
         </PopoverTrigger>
         <PopoverContent className="w-80 bottom-2 -translate-y-12" side="top" align="start">
-          <div className="p-2 grid grid-cols-4 gap-2">
+          <div className="p-2 grid grid-cols-4 gap-4">
             {apps.map((app) => (
               <button
                 key={app.id}
                 onClick={() => handleAppClick(app)}
-                className="flex flex-col items-center justify-center gap-2 p-3 rounded-lg hover:bg-accent transition-colors text-center"
+                className="flex flex-col items-center justify-center gap-2 p-2 rounded-lg hover:bg-accent transition-colors text-center"
               >
                 <app.icon className="w-6 h-6 text-primary-foreground" />
-                <span className="text-xs font-medium truncate">{app.name}</span>
+                <span className="text-xs font-medium truncate w-full">{app.name}</span>
               </button>
             ))}
           </div>
