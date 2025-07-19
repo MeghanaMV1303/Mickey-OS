@@ -14,8 +14,8 @@ interface AppWindowProps {
 
 export function AppWindow({ app, children, onClose }: AppWindowProps) {
   return (
-    <div className="absolute inset-0 z-10 flex items-center justify-center p-4 bg-black/30 backdrop-blur-sm">
-      <Card className="w-full max-w-4xl h-full max-h-[85vh] shadow-2xl flex flex-col animate-in zoom-in-95 fade-in-50 duration-300">
+    <div className="absolute inset-0 z-10 flex items-center justify-center p-4 bg-background/80 backdrop-blur-sm">
+      <Card className="w-full max-w-4xl h-full max-h-[85vh] shadow-2xl flex flex-col animate-in zoom-in-95 fade-in-50 duration-300 bg-card/90">
         <CardHeader className="flex flex-row items-center justify-between p-2 pl-4 border-b bg-card/80 rounded-t-lg">
           <div className="flex items-center gap-2 font-medium text-sm">
             <app.icon className="w-4 h-4" />
@@ -26,7 +26,7 @@ export function AppWindow({ app, children, onClose }: AppWindowProps) {
             <span className="sr-only">Close</span>
           </Button>
         </CardHeader>
-        <CardContent className="p-0 flex-1 overflow-y-auto bg-background/80 rounded-b-lg">
+        <CardContent className="p-0 flex-1 overflow-y-auto rounded-b-lg">
           {children}
         </CardContent>
       </Card>
