@@ -13,6 +13,10 @@ export type SystemStatus = {
     used: number;
     total: number;
   };
+  battery: {
+    level: number;
+    isCharging: boolean;
+  };
 };
 
 /**
@@ -22,10 +26,12 @@ export type SystemStatus = {
 export async function getSystemStatus(): Promise<SystemStatus> {
   // These are random values to simulate real-time data.
   const cpuUsage = Math.floor(Math.random() * 100);
-  const memoryUsed = Math.floor(Math.random() * 16) + 4; // 4-20 GB
+  const memoryUsed = Math.floor(Math.random() * 28) + 4; // 4-32 GB
   const memoryTotal = 32;
   const diskUsed = Math.floor(Math.random() * 300) + 100; // 100-400 GB
   const diskTotal = 1000;
+  const batteryLevel = Math.floor(Math.random() * 100);
+  const isCharging = batteryLevel < 95 && Math.random() > 0.5;
 
   return {
     cpuUsage,
@@ -36,6 +42,10 @@ export async function getSystemStatus(): Promise<SystemStatus> {
     diskUsage: {
       used: diskUsed,
       total: diskTotal,
+    },
+    battery: {
+      level: batteryLevel,
+      isCharging: isCharging,
     },
   };
 }

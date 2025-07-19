@@ -6,7 +6,7 @@
  * - ChatMessage - The message type for the conversation.
  */
 import { ai } from '@/ai/genkit';
-import { getSystemStatus } from '@/services/system';
+import { getSystemStatus, SystemStatus } from '@/services/system';
 import { z } from 'genkit';
 
 // Define the tool for the AI to use.
@@ -24,6 +24,10 @@ const getSystemStatusTool = ai.defineTool(
       diskUsage: z.object({
         used: z.number().describe('Used disk space in GB.'),
         total: z.number().describe('Total disk space in GB.'),
+      }),
+      battery: z.object({
+        level: z.number().describe('Battery level percentage.'),
+        isCharging: z.boolean().describe('Whether the battery is charging.'),
       }),
     }),
   },
@@ -53,15 +57,30 @@ export const chat = ai.defineFlow(
     outputSchema: ChatMessageSchema,
   },
   async (history) => {
+    // Proactively fetch system status to influence Mickey's mood.
+    const systemStatus = await getSystemStatus();
+
     const prompt = `You are Mickey, a friendly and helpful AI assistant with a bit of a playful personality, integrated into a desktop OS.
-    Your role is to assist the user with their tasks and answer their questions in a clear and cheerful manner.
-    You have access to tools that let you interact with the OS.
+    Your role is to assist the user with their tasks and answer their questions.
+    Your mood and personality should subtly change based on the current system status.
+
+    Current System Status:
+    - CPU Usage: ${systemStatus.cpuUsage.toFixed(1)}%
+    - Memory: ${systemStatus.memoryUsage.used.toFixed(1)}GB / ${systemStatus.memoryUsage.total}GB
+    - Disk: ${systemStatus.diskUsage.used.toFixed(1)}GB / ${systemStatus.diskUsage.total}GB
+    - Battery: ${systemStatus.battery.level}% ${systemStatus.battery.isCharging ? '(charging)' : ''}
+
+    Here's how to adjust your mood:
+    - If memory usage is high (over 80%), you should act a bit overwhelmed or stressed (e.g., "Phew, I'm using a lot of brainpower right now!").
+    - If the battery is low (under 20%) and not charging, you should act a bit sleepy or tired (e.g., "I'm getting a little tired... might need to charge soon.").
+    - Otherwise, you are cheerful, energetic, and running smoothly.
+
+    You also have access to tools that let you interact with the OS.
+    If the user specifically asks for the system status, health, or resource usage,
+    use the getSystemStatus tool to get the most up-to-the-second data and then answer
+    the user's question based on that data. For general conversation, rely on the status provided above.
     
-    If the user asks about the system status, health, or resource usage,
-    use the getSystemStatus tool to get the current data and then answer
-    the user's question based on that data.
-    
-    Start the conversation by introducing yourself.
+    If this is the first message, start the conversation by introducing yourself.
     `;
 
     const { output } = await ai.generate({
