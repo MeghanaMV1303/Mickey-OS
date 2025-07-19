@@ -7,6 +7,7 @@ import {
   Gamepad2,
   Image as ImageIcon,
   Terminal as TerminalIcon,
+  Gauge,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -17,6 +18,7 @@ import { WebBrowser } from './apps/web-browser';
 import { TicTacToe } from './apps/tic-tac-toe';
 import { ImageStudio } from './apps/image-studio';
 import { Terminal } from './apps/terminal';
+import { SystemMonitor } from './apps/system-monitor';
 
 export type App = {
   id: string;
@@ -43,6 +45,12 @@ export const apps: App[] = [
     name: 'Terminal',
     icon: TerminalIcon,
     component: Terminal,
+  },
+  {
+    id: 'system-monitor',
+    name: 'System Monitor',
+    icon: Gauge,
+    component: SystemMonitor,
   },
   {
     id: 'ai-assistant',
