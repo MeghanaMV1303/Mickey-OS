@@ -27,7 +27,8 @@ export function VideoStudio() {
       const response = await generateVideo({ prompt });
       setResult(response);
     } catch (err) {
-      setError('Failed to generate video. The model may be busy, please try again in a few moments.');
+      const errorMessage = err instanceof Error ? err.message : 'An unknown error occurred. Please try again.';
+      setError(errorMessage);
       console.error(err);
     } finally {
       setLoading(false);
