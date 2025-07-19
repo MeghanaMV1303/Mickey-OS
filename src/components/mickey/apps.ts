@@ -6,6 +6,7 @@ import {
   Settings,
   Gamepad2,
   Image as ImageIcon,
+  Terminal as TerminalIcon,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -15,6 +16,7 @@ import { SystemSettings } from './apps/system-settings';
 import { WebBrowser } from './apps/web-browser';
 import { TicTacToe } from './apps/tic-tac-toe';
 import { ImageStudio } from './apps/image-studio';
+import { Terminal } from './apps/terminal';
 
 export type App = {
   id: string;
@@ -35,6 +37,12 @@ export const apps: App[] = [
     name: 'Web Browser',
     icon: Globe,
     component: WebBrowser,
+  },
+  {
+    id: 'terminal',
+    name: 'Terminal',
+    icon: TerminalIcon,
+    component: Terminal,
   },
   {
     id: 'ai-assistant',
