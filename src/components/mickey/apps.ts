@@ -1,7 +1,7 @@
 import {
   Folder,
   Globe,
-  BrainCircuit,
+  Mouse,
   Package,
   Settings,
   Gamepad2,
@@ -62,8 +62,8 @@ export const apps: App[] = [
   // AI & Creative
   {
     id: 'ai-assistant',
-    name: 'AI Assistant',
-    icon: BrainCircuit,
+    name: 'Mickey Assistant',
+    icon: Mouse,
     component: AiAssistant,
   },
   {

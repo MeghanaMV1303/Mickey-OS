@@ -8,7 +8,7 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { BrainCircuit, Loader2, Send, User } from 'lucide-react';
+import { BrainCircuit, Loader2, Send, User, Mouse } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
@@ -53,7 +53,7 @@ export function AiAssistant() {
     }
     return (
         <Avatar>
-            <AvatarFallback className='bg-primary text-primary-foreground'><BrainCircuit/></AvatarFallback>
+            <AvatarFallback className='bg-primary text-primary-foreground'><Mouse/></AvatarFallback>
         </Avatar>
     )
   }
@@ -61,11 +61,11 @@ export function AiAssistant() {
   return (
     <div className="p-4 h-full flex flex-col gap-4">
       <div className="flex items-center gap-3 px-2">
-        <BrainCircuit className="w-8 h-8 text-primary" />
+        <Mouse className="w-8 h-8 text-primary" />
         <div>
-          <h1 className="text-2xl font-bold">AI Assistant</h1>
+          <h1 className="text-2xl font-bold">Mickey Assistant</h1>
           <p className="text-muted-foreground">
-            Chat with the AI or ask it to perform tasks.
+            I'm Mickey! Ask me a question or for help with a task.
           </p>
         </div>
       </div>
@@ -74,7 +74,7 @@ export function AiAssistant() {
         <CardContent className="p-4 flex-1 flex flex-col gap-4">
             <ScrollArea className="flex-1 pr-4">
                 <div className='space-y-4'>
-                {messages.length === 0 && <p className="text-muted-foreground text-center">Ask me anything... e.g., "What's the system status?"</p>}
+                {messages.length === 0 && <p className="text-muted-foreground text-center">Hi there! I'm Mickey, your friendly OS assistant. How can I help you today? You can ask me things like "What's the system status?"</p>}
                 {messages.map((msg, index) => (
                     <div key={index} className={cn("flex items-start gap-3", msg.role === 'user' ? 'justify-end' : 'justify-start')}>
                         {msg.role === 'model' && getAvatar(msg.role)}
@@ -106,7 +106,7 @@ export function AiAssistant() {
                 <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask about system status..."
+                placeholder="Ask Mickey anything..."
                 className="bg-background"
                 />
                 <Button type="submit" disabled={loading || !input} size="icon">
