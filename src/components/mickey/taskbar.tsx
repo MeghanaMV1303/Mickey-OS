@@ -19,10 +19,9 @@ export function Taskbar({ onAppSelect }: TaskbarProps) {
   const [popoverOpen, setPopoverOpen] = useState(false);
 
   useEffect(() => {
-    const timer = setInterval(() => {
-      setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
-    }, 1000);
-    setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    const update = () => setTime(new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }));
+    update();
+    const timer = setInterval(update, 1000);
     return () => clearInterval(timer);
   }, []);
 
