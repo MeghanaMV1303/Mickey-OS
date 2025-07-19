@@ -8,6 +8,7 @@ import {
   Image as ImageIcon,
   Terminal as TerminalIcon,
   Gauge,
+  Palette,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -19,6 +20,7 @@ import { TicTacToe } from './apps/tic-tac-toe';
 import { ImageStudio } from './apps/image-studio';
 import { Terminal } from './apps/terminal';
 import { SystemMonitor } from './apps/system-monitor';
+import { ThemeStudio } from './apps/theme-studio';
 
 export type App = {
   id: string;
@@ -45,6 +47,12 @@ export const apps: App[] = [
     name: 'Terminal',
     icon: TerminalIcon,
     component: Terminal,
+  },
+  {
+    id: 'theme-studio',
+    name: 'Theme Studio',
+    icon: Palette,
+    component: ThemeStudio,
   },
   {
     id: 'system-monitor',

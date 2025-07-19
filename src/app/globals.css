@@ -4,48 +4,88 @@
 
 @layer base {
   :root {
-    --background: 0 0% 96.1%;
-    --foreground: 252 15% 25%;
-    --card: 240 67% 97%;
-    --card-foreground: 252 15% 25%;
-    --popover: 0 0% 100%;
-    --popover-foreground: 252 15% 25%;
-    --primary: 254 100% 86%;
-    --primary-foreground: 252 40% 38%;
-    --secondary: 240 20% 96%;
-    --secondary-foreground: 240 5.9% 10%;
-    --muted: 240 20% 96%;
-    --muted-foreground: 240 3.8% 46.1%;
-    --accent: 347 100% 90%;
-    --accent-foreground: 347 40% 25%;
-    --destructive: 0 84.2% 60.2%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 255 33% 90%;
-    --input: 255 33% 90%;
-    --ring: 254 100% 86%;
+    --background-default: 0 0% 96.1%;
+    --foreground-default: 252 15% 25%;
+    --card-default: 240 67% 97%;
+    --card-foreground-default: 252 15% 25%;
+    --popover-default: 0 0% 100%;
+    --popover-foreground-default: 252 15% 25%;
+    --primary-default: 254 100% 86%;
+    --primary-foreground-default: 252 40% 38%;
+    --secondary-default: 240 20% 96%;
+    --secondary-foreground-default: 240 5.9% 10%;
+    --muted-default: 240 20% 96%;
+    --muted-foreground-default: 240 3.8% 46.1%;
+    --accent-default: 347 100% 90%;
+    --accent-foreground-default: 347 40% 25%;
+    --destructive-default: 0 84.2% 60.2%;
+    --destructive-foreground-default: 0 0% 98%;
+    --border-default: 255 33% 90%;
+    --input-default: 255 33% 90%;
+    --ring-default: 254 100% 86%;
     --radius: 0.8rem;
+    
+    --background: var(--background-override, var(--background-default));
+    --foreground: var(--foreground-default);
+    --card: var(--card-override, var(--card-default));
+    --card-foreground: var(--card-foreground-default);
+    --popover: var(--popover-override, var(--popover-default));
+    --popover-foreground: var(--popover-foreground-default);
+    --primary: var(--primary-override, var(--primary-default));
+    --primary-foreground: var(--primary-foreground-default);
+    --secondary: var(--secondary-override, var(--secondary-default));
+    --secondary-foreground: var(--secondary-foreground-default);
+    --muted: var(--muted-override, var(--muted-default));
+    --muted-foreground: var(--muted-foreground-default);
+    --accent: var(--accent-override, var(--accent-default));
+    --accent-foreground: var(--accent-foreground-default);
+    --destructive: var(--destructive-default);
+    --destructive-foreground: var(--destructive-foreground-default);
+    --border: var(--border-override, var(--border-default));
+    --input: var(--input-override, var(--input-default));
+    --ring: var(--ring-override, var(--ring-default));
   }
 
   .dark {
-    --background: 252 15% 12%;
-    --foreground: 240 15% 95%;
-    --card: 252 15% 18%;
-    --card-foreground: 240 15% 95%;
-    --popover: 252 15% 12%;
-    --popover-foreground: 240 15% 95%;
-    --primary: 254 100% 86%;
-    --primary-foreground: 252 40% 38%;
-    --secondary: 252 15% 25%;
-    --secondary-foreground: 240 15% 95%;
-    --muted: 252 15% 25%;
-    --muted-foreground: 240 15% 65%;
-    --accent: 347 100% 86%;
-    --accent-foreground: 347 40% 38%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 0 0% 98%;
-    --border: 252 15% 25%;
-    --input: 252 15% 25%;
-    --ring: 254 100% 86%;
+    --background-default: 252 15% 12%;
+    --foreground-default: 240 15% 95%;
+    --card-default: 252 15% 18%;
+    --card-foreground-default: 240 15% 95%;
+    --popover-default: 252 15% 12%;
+    --popover-foreground-default: 240 15% 95%;
+    --primary-default: 254 100% 86%;
+    --primary-foreground-default: 252 40% 38%;
+    --secondary-default: 252 15% 25%;
+    --secondary-foreground-default: 240 15% 95%;
+    --muted-default: 252 15% 25%;
+    --muted-foreground-default: 240 15% 65%;
+    --accent-default: 347 100% 86%;
+    --accent-foreground-default: 347 40% 38%;
+    --destructive-default: 0 62.8% 30.6%;
+    --destructive-foreground-default: 0 0% 98%;
+    --border-default: 252 15% 25%;
+    --input-default: 252 15% 25%;
+    --ring-default: 254 100% 86%;
+    
+    --background: var(--background-override, var(--background-default));
+    --foreground: var(--foreground-default);
+    --card: var(--card-override, var(--card-default));
+    --card-foreground: var(--card-foreground-default);
+    --popover: var(--popover-override, var(--popover-default));
+    --popover-foreground: var(--popover-foreground-default);
+    --primary: var(--primary-override, var(--primary-default));
+    --primary-foreground: var(--primary-foreground-default);
+    --secondary: var(--secondary-override, var(--secondary-default));
+    --secondary-foreground: var(--secondary-foreground-default);
+    --muted: var(--muted-override, var(--muted-default));
+    --muted-foreground: var(--muted-foreground-default);
+    --accent: var(--accent-override, var(--accent-default));
+    --accent-foreground: var(--accent-foreground-default);
+    --destructive: var(--destructive-default);
+    --destructive-foreground: var(--destructive-foreground-default);
+    --border: var(--border-override, var(--border-default));
+    --input: var(--input-override, var(--input-default));
+    --ring: var(--ring-override, var(--ring-default));
   }
 }
 
