@@ -32,16 +32,16 @@ function calculateWinner(squares: SquareValue[]) {
 function Square({ value, onSquareClick }: { value: SquareValue; onSquareClick: () => void }) {
     const renderIcon = () => {
         if (value === 'X') {
-            return <svg className="w-12 h-12 text-blue-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>;
+            return <svg className="w-12 h-12 text-primary" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>;
         }
         if (value === 'O') {
-            return <svg className="w-12 h-12 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="10"></circle></svg>;
+            return <svg className="w-12 h-12 text-accent" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><circle cx="12" cy="12" r="9"></circle></svg>;
         }
         return null;
     }
   return (
     <button
-      className="flex items-center justify-center w-24 h-24 text-4xl font-bold transition-colors border-2 rounded-lg bg-card hover:bg-accent"
+      className="flex items-center justify-center w-24 h-24 text-4xl font-bold transition-colors border-2 rounded-lg bg-card hover:bg-accent/50"
       onClick={onSquareClick}
     >
       {renderIcon()}

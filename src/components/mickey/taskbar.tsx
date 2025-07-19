@@ -7,7 +7,7 @@ import {
 } from '@/components/ui/popover';
 import { Button } from '@/components/ui/button';
 import { LayoutGrid } from 'lucide-react';
-import { apps, type App } from './apps';
+import { apps, type App } from './apps.tsx';
 import { useEffect, useState } from 'react';
 
 interface TaskbarProps {
