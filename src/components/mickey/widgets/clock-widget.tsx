@@ -57,9 +57,9 @@ export function ClockWidget() {
     <WidgetCard title="Clock" icon={Clock}>
       <div className="text-center py-4 space-y-4">
         <div>
-            <p className="text-5xl font-bold text-primary-foreground tracking-wider h-[48px]">
-            {time || '...'}
-            </p>
+            <div className="text-5xl font-bold text-primary-foreground tracking-wider h-[48px] flex items-center justify-center font-mono tabular-nums">
+                {time || '...'}
+            </div>
             <p className="text-sm text-muted-foreground mt-2">{day}</p>
         </div>
         <div className="flex justify-around text-xs text-muted-foreground border-t border-border/50 pt-3">
