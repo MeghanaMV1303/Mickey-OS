@@ -4,6 +4,7 @@ import {
   BrainCircuit,
   Package,
   Settings,
+  Gamepad2,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -11,6 +12,7 @@ import { FileManager } from './apps/file-manager';
 import { PackageManager } from './apps/package-manager';
 import { SystemSettings } from './apps/system-settings';
 import { WebBrowser } from './apps/web-browser';
+import { TicTacToe } from './apps/tic-tac-toe';
 
 export type App = {
   id: string;
@@ -50,4 +52,10 @@ export const apps: App[] = [
     icon: Settings,
     component: SystemSettings,
   },
+  {
+    id: 'tic-tac-toe',
+    name: 'Tic-Tac-Toe',
+    icon: Gamepad2,
+    component: TicTacToe,
+  }
 ];
