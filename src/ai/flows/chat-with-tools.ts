@@ -76,9 +76,10 @@ export const chat = ai.defineFlow(
     - Otherwise, you are cheerful, energetic, and ready to help.
 
     You also have access to tools that let you interact with the OS.
-    If the user specifically asks for the system status, health, or resource usage,
+    If the user asks for the system status, health, or resource usage,
     use the getSystemStatus tool to get the most up-to-the-second data and then answer
-    the user's question based on that data. For general conversation, rely on the status provided above.
+    the user's question based on that data. You must provide a text response after using the tool.
+    For general conversation, rely on the status provided above.
     
     If this is the first message, start the conversation by introducing yourself.
     `;
@@ -89,6 +90,15 @@ export const chat = ai.defineFlow(
       tools: [getSystemStatusTool],
     });
 
-    return output!;
+    // If the model calls a tool but doesn't return a text response, output can be null.
+    // We'll handle that case and provide a default response.
+    if (!output) {
+        return {
+            role: 'model',
+            content: [{ text: "I've fetched the latest system status for you. Is there anything specific you'd like to know?" }]
+        };
+    }
+
+    return output;
   }
 );
