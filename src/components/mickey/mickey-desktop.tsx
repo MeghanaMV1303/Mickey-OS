@@ -1,7 +1,7 @@
 'use client';
 
 import { useState } from 'react';
-import type { App } from './apps';
+import type { App } from './apps.tsx';
 import { AppWindow } from './app-window';
 import { Taskbar } from './taskbar';
 import { ClockWidget } from './widgets/clock-widget';
@@ -11,6 +11,7 @@ import { DesktopConfigWidget } from './widgets/desktop-config-widget';
 import { useThemeManager } from './theme-provider';
 import { cn } from '@/lib/utils';
 import { SystemMonitorWidget } from './widgets/system-monitor-widget';
+import { CalendarWidget } from './widgets/calendar-widget';
 
 export function MickeyDesktop() {
   const [activeApp, setActiveApp] = useState<App | null>(null);
@@ -43,6 +44,7 @@ export function MickeyDesktop() {
           <WelcomeWidget />
           <ClockWidget />
           <SystemMonitorWidget />
+          <CalendarWidget />
           <AiSummaryWidget />
           <DesktopConfigWidget />
         </div>
