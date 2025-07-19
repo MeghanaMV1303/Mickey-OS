@@ -10,6 +10,7 @@ import { AiSummaryWidget } from './widgets/ai-summary-widget';
 import { DesktopConfigWidget } from './widgets/desktop-config-widget';
 import { useThemeManager } from './theme-provider';
 import { cn } from '@/lib/utils';
+import { SystemMonitorWidget } from './widgets/system-monitor-widget';
 
 export function MickeyDesktop() {
   const [activeApp, setActiveApp] = useState<App | null>(null);
@@ -26,19 +27,22 @@ export function MickeyDesktop() {
   return (
     <div
       className={cn(
-        "h-screen w-screen overflow-hidden flex flex-col bg-cover bg-center transition-all duration-500",
-        !customTheme.backgroundImage && "bg-background"
-        )}
+        'h-screen w-screen overflow-hidden flex flex-col bg-cover bg-center transition-all duration-500',
+        !customTheme.backgroundImage && 'bg-background'
+      )}
       style={{
-        backgroundImage: customTheme.backgroundImage ? `url(${customTheme.backgroundImage})` : undefined,
+        backgroundImage: customTheme.backgroundImage
+          ? `url(${customTheme.backgroundImage})`
+          : undefined,
       }}
       data-ai-hint="desktop background"
     >
-        <div className="absolute inset-0 bg-black/10 z-0"/>
+      <div className="absolute inset-0 bg-black/10 z-0" />
       <main className="flex-1 p-4 md:p-6 lg:p-8 overflow-y-auto z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
           <WelcomeWidget />
           <ClockWidget />
+          <SystemMonitorWidget />
           <AiSummaryWidget />
           <DesktopConfigWidget />
         </div>
