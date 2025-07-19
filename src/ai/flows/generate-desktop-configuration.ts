@@ -50,6 +50,7 @@ const prompt = ai.definePrompt({
   Respond using valid configuration file.
   Example:
   \`\`\`json
+  {{{{raw}}}}
   {{
     "theme": "light",
     "font_size": 12,
@@ -57,6 +58,7 @@ const prompt = ai.definePrompt({
     "accent_color": "#FFB9C9",
     "widgets": ["clock", "weather", "system_monitor"]
   }}
+  {{{{/raw}}}}
   \`\`\`
   `,
 });
