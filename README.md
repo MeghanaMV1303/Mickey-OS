@@ -140,20 +140,3 @@ Lead Developer & Designer
 * Uses [OpenAI API](https://openai.com/) for assistant features
 * Built with [GTK](https://www.gtk.org/) and optionally [Qt](https://www.qt.io/)
 * Icons and font by [Google Fonts](https://fonts.google.com/specimen/Inter) and [Feather Icons](https://feathericons.com)
-
----
-
-```
-
----
-
-Would you also like me to generate the following optional files?
-
-- `CONTRIBUTING.md`
-- `CODE_OF_CONDUCT.md`
-- `LICENSE` (MIT)
-- `install-dependencies.sh` script
-- A welcome badge or branding banner for GitHub?
-
-Let me know — I’ll tailor everything to match your vision!
-```
