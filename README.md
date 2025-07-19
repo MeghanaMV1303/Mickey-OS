@@ -1,8 +1,4 @@
-Here is your **complete and professional `README.md` file** for your project **Mickey: A Modern Desktop Environment**, with your name (*Meghana M V*) added as the lead developer and maintainer.
 
----
-
-````markdown
 # Mickey: A Modern Desktop Environment
 
 **Mickey** is a modern, AI-integrated desktop environment designed for a seamless and personalized user experience. Whether you're a developer, student, or everyday user, Mickey brings simplicity, automation, and elegance to your digital workspace.
