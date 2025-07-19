@@ -7,6 +7,7 @@ import { Taskbar } from './taskbar';
 import { ClockWidget } from './widgets/clock-widget';
 import { WelcomeWidget } from './widgets/welcome-widget';
 import { AiSummaryWidget } from './widgets/ai-summary-widget';
+import { DesktopConfigWidget } from './widgets/desktop-config-widget';
 
 export function MickeyDesktop() {
   const [activeApp, setActiveApp] = useState<App | null>(null);
@@ -29,6 +30,7 @@ export function MickeyDesktop() {
           <WelcomeWidget />
           <ClockWidget />
           <AiSummaryWidget />
+          <DesktopConfigWidget />
         </div>
       </main>
 
