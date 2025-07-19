@@ -30,6 +30,7 @@ export type App = {
 };
 
 export const apps: App[] = [
+  // Core Apps
   {
     id: 'file-manager',
     name: 'File Manager',
@@ -49,17 +50,12 @@ export const apps: App[] = [
     component: Terminal,
   },
   {
-    id: 'theme-studio',
-    name: 'Theme Studio',
-    icon: Palette,
-    component: ThemeStudio,
+    id: 'system-settings',
+    name: 'System Settings',
+    icon: Settings,
+    component: SystemSettings,
   },
-  {
-    id: 'system-monitor',
-    name: 'System Monitor',
-    icon: Gauge,
-    component: SystemMonitor,
-  },
+  // AI & Creative
   {
     id: 'ai-assistant',
     name: 'AI Assistant',
@@ -73,17 +69,25 @@ export const apps: App[] = [
     component: ImageStudio,
   },
   {
+    id: 'theme-studio',
+    name: 'Theme Studio',
+    icon: Palette,
+    component: ThemeStudio,
+  },
+  // Utilities
+  {
+    id: 'system-monitor',
+    name: 'System Monitor',
+    icon: Gauge,
+    component: SystemMonitor,
+  },
+  {
     id: 'package-manager',
     name: 'Package Manager',
     icon: Package,
     component: PackageManager,
   },
-  {
-    id: 'system-settings',
-    name: 'System Settings',
-    icon: Settings,
-    component: SystemSettings,
-  },
+  // Fun
   {
     id: 'tic-tac-toe',
     name: 'Tic-Tac-Toe',
