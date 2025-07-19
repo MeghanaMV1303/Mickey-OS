@@ -7,3 +7,4 @@ import '@/ai/flows/generate-desktop-configuration.ts';
 import '@/ai/flows/generate-image.ts';
 import '@/ai/flows/generate-theme.ts';
 import '@/ai/flows/generate-speech.ts';
+import '@/ai/flows/generate-video.ts';

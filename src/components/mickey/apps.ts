@@ -10,6 +10,7 @@ import {
   Gauge,
   Palette,
   MessageSquareText,
+  Clapperboard,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -23,6 +24,7 @@ import { Terminal } from './apps/terminal';
 import { SystemMonitor } from './apps/system-monitor';
 import { ThemeStudio } from './apps/theme-studio';
 import { SpeechSynthesizer } from './apps/speech-synthesizer';
+import { VideoStudio } from './apps/video-studio';
 
 export type App = {
   id: string;
@@ -69,6 +71,12 @@ export const apps: App[] = [
     name: 'Image Studio',
     icon: ImageIcon,
     component: ImageStudio,
+  },
+  {
+    id: 'video-studio',
+    name: 'Video Studio',
+    icon: Clapperboard,
+    component: VideoStudio,
   },
   {
     id: 'theme-studio',
