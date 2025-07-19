@@ -27,7 +27,7 @@ export function MickeyDesktop() {
     <div
       className={cn(
         "h-screen w-screen overflow-hidden flex flex-col bg-cover bg-center transition-all duration-500",
-        !customTheme.backgroundImage && "bg-gradient-to-br from-background to-card"
+        !customTheme.backgroundImage && "bg-background"
         )}
       style={{
         backgroundImage: customTheme.backgroundImage ? `url(${customTheme.backgroundImage})` : undefined,

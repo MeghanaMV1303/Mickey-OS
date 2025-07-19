@@ -4,25 +4,25 @@
 
 @layer base {
   :root {
-    --background-default: 0 0% 96.1%;
+    --background-default: 240 10% 97.1%; /* very light grey */
     --foreground-default: 252 15% 25%;
     --card-default: 240 67% 97%;
     --card-foreground-default: 252 15% 25%;
     --popover-default: 0 0% 100%;
     --popover-foreground-default: 252 15% 25%;
-    --primary-default: 254 100% 86%;
+    --primary-default: 240 67% 94%; /* soft lavender */
     --primary-foreground-default: 252 40% 38%;
     --secondary-default: 240 20% 96%;
     --secondary-foreground-default: 240 5.9% 10%;
     --muted-default: 240 20% 96%;
     --muted-foreground-default: 240 3.8% 46.1%;
-    --accent-default: 347 100% 90%;
+    --accent-default: 349 100% 86.5%; /* pale rose */
     --accent-foreground-default: 347 40% 25%;
     --destructive-default: 0 84.2% 60.2%;
     --destructive-foreground-default: 0 0% 98%;
     --border-default: 255 33% 90%;
     --input-default: 255 33% 90%;
-    --ring-default: 254 100% 86%;
+    --ring-default: 240 67% 94%;
     --radius: 0.8rem;
     
     --background: var(--background-override, var(--background-default));
@@ -53,19 +53,19 @@
     --card-foreground-default: 240 15% 95%;
     --popover-default: 252 15% 12%;
     --popover-foreground-default: 240 15% 95%;
-    --primary-default: 254 100% 86%;
+    --primary-default: 240 67% 94%;
     --primary-foreground-default: 252 40% 38%;
     --secondary-default: 252 15% 25%;
     --secondary-foreground-default: 240 15% 95%;
     --muted-default: 252 15% 25%;
     --muted-foreground-default: 240 15% 65%;
-    --accent-default: 347 100% 86%;
+    --accent-default: 349 100% 86.5%;
     --accent-foreground-default: 347 40% 38%;
     --destructive-default: 0 62.8% 30.6%;
     --destructive-foreground-default: 0 0% 98%;
     --border-default: 252 15% 25%;
     --input-default: 252 15% 25%;
-    --ring-default: 254 100% 86%;
+    --ring-default: 240 67% 94%;
     
     --background: var(--background-override, var(--background-default));
     --foreground: var(--foreground-default);
