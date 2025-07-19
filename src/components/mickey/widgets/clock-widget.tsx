@@ -40,14 +40,12 @@ export function ClockWidget() {
     ? date.toLocaleTimeString([], {
         hour: '2-digit',
         minute: '2-digit',
-        second: '2-digit',
       })
     : null;
 
   const day = date
     ? date.toLocaleDateString([], {
         weekday: 'long',
-        year: 'numeric',
         month: 'long',
         day: 'numeric',
       })
@@ -56,11 +54,11 @@ export function ClockWidget() {
   return (
     <WidgetCard title="Clock" icon={Clock}>
       <div className="text-center py-4 space-y-4">
-        <div>
-            <div className="text-5xl font-bold text-primary-foreground tracking-wider h-[48px] flex items-center justify-center font-mono tabular-nums">
+        <div className="flex items-baseline justify-center gap-2">
+            <div className="text-4xl font-bold text-primary-foreground tracking-wider font-mono tabular-nums">
                 {time || '...'}
             </div>
-            <p className="text-sm text-muted-foreground mt-2">{day}</p>
+            <p className="text-sm text-muted-foreground">{day}</p>
         </div>
         <div className="flex justify-around text-xs text-muted-foreground border-t border-border/50 pt-3">
             {worldTimes.map(({city, time}) => (
