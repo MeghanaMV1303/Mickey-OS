@@ -9,6 +9,7 @@ import {
   Terminal as TerminalIcon,
   Gauge,
   Palette,
+  MessageSquareText,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -21,6 +22,7 @@ import { ImageStudio } from './apps/image-studio';
 import { Terminal } from './apps/terminal';
 import { SystemMonitor } from './apps/system-monitor';
 import { ThemeStudio } from './apps/theme-studio';
+import { SpeechSynthesizer } from './apps/speech-synthesizer';
 
 export type App = {
   id: string;
@@ -74,6 +76,12 @@ export const apps: App[] = [
     icon: Palette,
     component: ThemeStudio,
   },
+  {
+    id: 'speech-synthesizer',
+    name: 'Speech Synthesizer',
+    icon: MessageSquareText,
+    component: SpeechSynthesizer,
+  },
   // Utilities
   {
     id: 'system-monitor',
@@ -93,5 +101,5 @@ export const apps: App[] = [
     name: 'Tic-Tac-Toe',
     icon: Gamepad2,
     component: TicTacToe,
-  }
+  },
 ];
