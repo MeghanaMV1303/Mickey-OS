@@ -8,31 +8,12 @@ import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
 import { useState } from 'react';
 import { Card, CardContent } from '@/components/ui/card';
-import { BrainCircuit, Loader2, Send, User } from 'lucide-react';
+import { BrainCircuit, Loader2, Send, User, Mouse } from 'lucide-react';
 import { Alert, AlertDescription, AlertTitle } from '@/components/ui/alert';
 import { ScrollArea } from '@/components/ui/scroll-area';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { cn } from '@/lib/utils';
 import type { SVGProps } from 'react';
-
-const TeddyBearIcon = (props: SVGProps<SVGSVGElement>) => (
-  <svg
-    xmlns="http://www.w3.org/2000/svg"
-    viewBox="0 0 24 24"
-    fill="currentColor"
-    stroke="currentColor"
-    strokeWidth="1"
-    strokeLinecap="round"
-    strokeLinejoin="round"
-    {...props}
-  >
-    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm3.5 14c-1.93 0-3.5-1.57-3.5-3.5S13.57 9 15.5 9s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5zm-7 0c-1.93 0-3.5-1.57-3.5-3.5S6.57 9 8.5 9s3.5 1.57 3.5 3.5-1.57 3.5-3.5 3.5z" />
-    <path d="M12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm0-6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z" />
-    <circle cx="8.5" cy="12.5" r="1" />
-    <circle cx="15.5" cy="12.5" r="1" />
-  </svg>
-);
-
 
 export function AiAssistant() {
   const [messages, setMessages] = useState<ChatMessage[]>([]);
@@ -73,7 +54,7 @@ export function AiAssistant() {
     }
     return (
         <Avatar>
-            <AvatarFallback className='bg-primary text-primary-foreground'><TeddyBearIcon className="w-5 h-5"/></AvatarFallback>
+            <AvatarFallback className='bg-primary text-primary-foreground'><Mouse className="w-5 h-5"/></AvatarFallback>
         </Avatar>
     )
   }
@@ -81,11 +62,11 @@ export function AiAssistant() {
   return (
     <div className="p-4 h-full flex flex-col gap-4">
       <div className="flex items-center gap-3 px-2">
-        <TeddyBearIcon className="w-8 h-8 text-primary" />
+        <Mouse className="w-8 h-8 text-primary" />
         <div>
-          <h1 className="text-2xl font-bold">Teddy Assistant</h1>
+          <h1 className="text-2xl font-bold">Mickey Assistant</h1>
           <p className="text-muted-foreground">
-            I'm Teddy! Ask me a question or for help with a task.
+            I'm Mickey! Ask me a question or for help with a task.
           </p>
         </div>
       </div>
@@ -94,7 +75,7 @@ export function AiAssistant() {
         <CardContent className="p-4 flex-1 flex flex-col gap-4">
             <ScrollArea className="flex-1 pr-4">
                 <div className='space-y-4'>
-                {messages.length === 0 && <p className="text-muted-foreground text-center">Hi there! I'm Teddy, your friendly AI bear. How can I help you today? You can ask me things like "What's the system status?"</p>}
+                {messages.length === 0 && <p className="text-muted-foreground text-center">Hi there! I'm Mickey, your friendly AI assistant. How can I help you today? You can ask me things like "What's the system status?"</p>}
                 {messages.map((msg, index) => (
                     <div key={index} className={cn("flex items-start gap-3", msg.role === 'user' ? 'justify-end' : 'justify-start')}>
                         {msg.role === 'model' && getAvatar(msg.role)}
@@ -126,7 +107,7 @@ export function AiAssistant() {
                 <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Ask Teddy anything..."
+                placeholder="Ask Mickey anything..."
                 className="bg-background"
                 />
                 <Button type="submit" disabled={loading || !input} size="icon">
