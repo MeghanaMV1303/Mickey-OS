@@ -5,6 +5,7 @@ import {
   Package,
   Settings,
   Gamepad2,
+  Image as ImageIcon,
   type LucideIcon,
 } from 'lucide-react';
 import { AiAssistant } from './apps/ai-assistant';
@@ -13,6 +14,7 @@ import { PackageManager } from './apps/package-manager';
 import { SystemSettings } from './apps/system-settings';
 import { WebBrowser } from './apps/web-browser';
 import { TicTacToe } from './apps/tic-tac-toe';
+import { ImageStudio } from './apps/image-studio';
 
 export type App = {
   id: string;
@@ -39,6 +41,12 @@ export const apps: App[] = [
     name: 'AI Assistant',
     icon: BrainCircuit,
     component: AiAssistant,
+  },
+  {
+    id: 'image-studio',
+    name: 'Image Studio',
+    icon: ImageIcon,
+    component: ImageStudio,
   },
   {
     id: 'package-manager',
