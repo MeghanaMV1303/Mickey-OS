@@ -48,7 +48,7 @@ export function Taskbar({ onAppSelect }: TaskbarProps) {
                 className="flex flex-col items-center justify-center gap-2 p-2 rounded-lg hover:bg-accent transition-colors text-center"
               >
                 <app.icon className="w-6 h-6 text-primary-foreground" />
-                <span className="text-xs font-medium truncate w-full">{app.name}</span>
+                <span className="text-xs font-medium w-full">{app.name}</span>
               </button>
             ))}
           </div>
